@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>My profile</title>
+
+    <style>
+
+        body
+        {
+            margin: 0;
+            padding: 0;
+
+            background-color: #e9eef5;
+
+            font-family: Arial, sans-serif;
+        }
+
+        .card
+        {
+            width: 500px;
+
+            margin: 50px auto;
+
+            background-color: white;
+
+            border-radius: 20px;
+
+            padding: 30px;
+
+            text-align: center;
+
+            box-shadow: 0 0 20px gray;
+        }
+
+        img
+        {
+            width: 200px;
+            height: 200px;
+
+            border-radius: 50%;
+
+            border: 5px solid #4a90e2;
+
+            object-fit: cover;
+        }
+
+        h1
+        {
+            font-size: 36px;
+
+            color: #2c3e50;
+
+            margin-top: 20px;
+
+            transition: 0.3s;
+        }
+
+        h1:hover
+        {
+            color: #e74c3c;
+        }
+
+        p
+        {
+            font-size: 20px;
+
+            color: #555;
+        }
+
+        input
+        {
+            width: 80%;
+
+            padding: 10px;
+
+            margin-top: 15px;
+
+            border-radius: 10px;
+
+            border: 2px solid #4a90e2;
+
+            font-size: 16px;
+        }
+
+        button
+        {
+            margin-top: 15px;
+
+            padding: 12px 20px;
+
+            border: none;
+
+            border-radius: 10px;
+
+            background-color: #4a90e2;
+
+            color: white;
+
+            font-size: 16px;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        button:hover
+        {
+            background-color: #357abd;
+
+            transform: scale(1.05);
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+    <img src="putin.jpg">
+
+    <h1 id="surname">Safronov</h1>
+
+    <p>Student STANKIN</p>
+
+    <input type="text" id="newSurname" placeholder="Enter new second name">
+
+    <br>
+
+    <button onclick="changeSurname()">
+        Change second name
+    </button>
+
+    <br>
+
+    <button onclick="changeBackground()">
+        Random theme
+    </button>
+
+</div>
+
+<script>
+
+    function changeSurname()
+    {
+        let text =
+            document.getElementById("newSurname").value;
+
+        document.getElementById("surname").innerText =
+            text;
+    }
+
+    function changeBackground()
+    {
+        let color =
+            "#" + Math.floor(Math.random() * 16777215).toString(16);
+
+        document.body.style.backgroundColor = color;
+    }
+
+</script>
+
+</body>
+
+</html>
